@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,27 +20,30 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(name = "COD_PAIS_NACIONALIDAD", length = 2)
-	@ManyToOne( )
+	@ManyToOne
+	@JoinColumn(name = "COD_PAIS_NACIONALIDAD")
 	private Pais paisNacionalidad;
 
-	@Column(name = "COD_TIPO_DOCUMENTO", length = 2)
 	@ManyToOne
+	@JoinColumn(name = "COD_TIPO_DOCUMENTO")
 	private TipoDocumento tipoDocumento ;
 
-	@Column(name = "COD_SEXO", length = 1)
 	@ManyToOne
+	@JoinColumn(name = "COD_SEXO")
 	private Sexo sexo;
 
 	@Temporal(TemporalType.DATE)	
 	@Column(name = "FECHA_NACIMIENTO")
 	private Date fechaNacimiento;
 
-	@Column(name = "NOMBRE")
+	@Column(name = "NOMBRE", length = 60)
 	private String nombre;
 
-	@Column(name = "APELLIDO")
+	@Column(name = "APELLIDO", length = 25)
 	private String apellido;
+	
+	@Column(name = "NUMERO_DOCUMENTO", length =20)
+	private String numeroDocumento;
 
 
 	public Integer getId() {
@@ -84,4 +88,11 @@ public class Persona {
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	public String getNumeroDocumento() {
+		return numeroDocumento;
+	}
+	public void setNumeroDocumento(String numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+	
 }

@@ -2,10 +2,12 @@ package com.personas.persistencia.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity(name = "PAIS")
 public class Pais {
 	
+	@Id
 	@Column(name = "COD_PAIS")
 	private String codPais;
 
