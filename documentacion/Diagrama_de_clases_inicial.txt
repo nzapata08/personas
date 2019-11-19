@@ -1,0 +1,7 @@
+Diagrama de clases inicial
+
+El diagrama de clases inicial se encuentra en draw.io compartido en el enlace:
+
+https://drive.google.com/file/d/1ot72uI95WGriVe-iB4bOl-vXvpqg4XzZ/view?usp=sharing
+
+se pasara a modificar sacando versiones nuevas ante posibles cambios en requerimientos.
