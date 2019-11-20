@@ -2,20 +2,37 @@ package com.personas.altapersonas.dto;
 
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.personas.altapersonas.validacion.Validacion;
+
+@Valid
 public class AltaPersonaDto {
 
+	@NotBlank(message = Validacion.COD_PAIS_NACIONALIDAD_OBLIGATORIO)
 	private String codPaisNacionalidad;
 
+	@NotBlank(message = Validacion.COD_TIPO_DOCUMENTO_OBLIGATORIO)
 	private String codTipoDocumento ;
 
+	@NotBlank(message = Validacion.COD_SEXO_OBLIGATORIO)
 	private String codSexo;
 
+	@NotNull(message = Validacion.FECHA_NACIMIENTO_OBLIGATORIO)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date fechaNacimiento;
 
+	@NotBlank(message = Validacion.NOMBRE_OBLIGATORIO)
 	private String nombre;
 
+	@NotBlank(message = Validacion.APELLIDO_OBLIGATORIO)
 	private String apellido;
-	
+
+	@NotBlank(message = Validacion.NUMERDO_DOCUMENTO_OBLIGATORIO)
 	private String numeroDocumento;
 
 	public String getNombre() {
